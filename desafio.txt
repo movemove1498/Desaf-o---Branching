@@ -1,0 +1,103 @@
+
+em147@MOVE MINGW64 ~/OneDrive/Escritorio/Py
+$ cd Clase22
+
+em147@MOVE MINGW64 ~/OneDrive/Escritorio/Py/Clase22
+$ cd git_landing
+
+em147@MOVE MINGW64 ~/OneDrive/Escritorio/Py/Clase22/git_landing
+$ ls -la
+total 8
+drwxr-xr-x 1 em147 197609   0 Jun 23 12:24 ./
+drwxr-xr-x 1 em147 197609   0 Jun 23 12:24 ../
+-rw-r--r-- 1 em147 197609 740 Jun 23 12:24 index.html
+-rw-r--r-- 1 em147 197609 828 Jun 23 12:24 style.css
+
+em147@MOVE MINGW64 ~/OneDrive/Escritorio/Py/Clase22/git_landing
+$ git init
+Initialized empty Git repository in C:/Users/em147/OneDrive/Escritorio/Py/Clase22/git_landing/.git/
+
+em147@MOVE MINGW64 ~/OneDrive/Escritorio/Py/Clase22/git_landing (master)
+$ ls -la
+total 12
+drwxr-xr-x 1 em147 197609   0 Jun 23 17:28 ./
+drwxr-xr-x 1 em147 197609   0 Jun 23 12:24 ../
+drwxr-xr-x 1 em147 197609   0 Jun 23 17:28 .git/
+-rw-r--r-- 1 em147 197609 740 Jun 23 12:24 index.html
+-rw-r--r-- 1 em147 197609 828 Jun 23 12:24 style.css
+
+em147@MOVE MINGW64 ~/OneDrive/Escritorio/Py/Clase22/git_landing (master)
+$ git add .
+warning: in the working copy of 'index.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'style.css', LF will be replaced by CRLF the next time Git touches it
+
+em147@MOVE MINGW64 ~/OneDrive/Escritorio/Py/Clase22/git_landing (master)
+$ git commit -m "Initial commit"
+[master (root-commit) 3264393] Initial commit
+ 2 files changed, 81 insertions(+)
+ create mode 100644 index.html
+ create mode 100644 style.css
+
+em147@MOVE MINGW64 ~/OneDrive/Escritorio/Py/Clase22/git_landing (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+em147@MOVE MINGW64 ~/OneDrive/Escritorio/Py/Clase22/git_landing (master)
+$ git branch development
+
+em147@MOVE MINGW64 ~/OneDrive/Escritorio/Py/Clase22/git_landing (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+em147@MOVE MINGW64 ~/OneDrive/Escritorio/Py/Clase22/git_landing (master)
+$ git checkout development
+Switched to branch 'development'
+
+em147@MOVE MINGW64 ~/OneDrive/Escritorio/Py/Clase22/git_landing (development)
+$ git add index.html
+warning: in the working copy of 'index.html', LF will be replaced by CRLF the next time Git touches it
+
+em147@MOVE MINGW64 ~/OneDrive/Escritorio/Py/Clase22/git_landing (development)
+$ git commit -m "Add link to GitHub on image click"
+[development 15cc796] Add link to GitHub on image click
+ 1 file changed, 12 insertions(+), 1 deletion(-)
+
+em147@MOVE MINGW64 ~/OneDrive/Escritorio/Py/Clase22/git_landing (development)
+$ git checkout -b new-feature
+Switched to a new branch 'new-feature'
+
+em147@MOVE MINGW64 ~/OneDrive/Escritorio/Py/Clase22/git_landing (new-feature)
+$ git add index.html
+warning: in the working copy of 'index.html', LF will be replaced by CRLF the next time Git touches it
+
+em147@MOVE MINGW64 ~/OneDrive/Escritorio/Py/Clase22/git_landing (new-feature)
+$ git commit -m "Update heading text in index.html"
+[new-feature cbd08e7] Update heading text in index.html
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+em147@MOVE MINGW64 ~/OneDrive/Escritorio/Py/Clase22/git_landing (new-feature)
+$ git checkout development
+Switched to branch 'development'
+
+em147@MOVE MINGW64 ~/OneDrive/Escritorio/Py/Clase22/git_landing (development)
+$ git merge new-feature
+Updating 15cc796..cbd08e7
+Fast-forward
+ index.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+em147@MOVE MINGW64 ~/OneDrive/Escritorio/Py/Clase22/git_landing (development)
+$ git checkout master
+Switched to branch 'master'
+
+em147@MOVE MINGW64 ~/OneDrive/Escritorio/Py/Clase22/git_landing (master)
+$ git merge development
+Updating 3264393..cbd08e7
+Fast-forward
+ index.html | 13 ++++++++++++-
+ 1 file changed, 12 insertions(+), 1 deletion(-)
+
+em147@MOVE MINGW64 ~/OneDrive/Escritorio/Py/Clase22/git_landing (master)
+$
